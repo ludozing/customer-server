@@ -1,0 +1,7 @@
+{
+    "host": "customer-manage.cfmj5nzjflrl.us-east-1.rds.amazonaws.com",
+    "user": "admin",
+    "password": "00000000",
+    "port": "3306",
+    "database": "customerdb"
+}
