@@ -64,7 +64,8 @@ app.delete('/customers/:id', async(req,res)=>{
 app.post('/customers/:id/update', async(req,res)=>{
     const { c_name, c_phone, c_birthday, c_gender, c_addr } = req.body
     const param = req.params;
-    connection.query(`update customers set (c_name, c_phone, c_birthday, c_gender, c_addr) = (?,?,?,?,?)`,[c_name, c_phone, c_birthday, c_gender, c_addr],function(err,result,fields){
+    connection.query(`update customers set c_name='${c_name}', c_phone='${c_phone}', c_birthday='${c_birthday}', c_gender='${c_gender}', c_addr='${c_addr}' where c_no = ${param.id}`,
+    function(err,result,fields){
         console.log(result);
     })
     res.send('수정되었습니다.')
